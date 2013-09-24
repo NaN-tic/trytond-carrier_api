@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- This file is part carrier_api module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<form string="Carrier API" col="4">
+    <label name="carrier"/>
+    <field name="carrier"/>
+    <label name="url"/>
+    <field name="url"/>
+    <label name="username"/>
+    <field name="username"/>
+    <label name="password"/>
+    <field name="password"/>
+    <label name="debug"/>
+    <field name="debug"/>
+    <label name="company"/>
+    <field name="company"/>
+    <separator string="Test" colspan="4" id="test"/>
+    <button name="test_connection" string="Test connection" colspan="4"/>
+</form>

@@ -1,0 +1,71 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:carrier.api:"
+msgid "Test connection are successfully!"
+msgstr "La connexió s'ha realitzat correctament"
+
+msgctxt "error:carrier.api:"
+msgid "Test connection failed!"
+msgstr "No s'ha pogut realitzar la connexió"
+
+msgctxt "field:carrier.api,carrier:"
+msgid "Carrier APP"
+msgstr "Transportista APP"
+
+msgctxt "field:carrier.api,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:carrier.api,create_date:"
+msgid "Create Date"
+msgstr "Data de creació"
+
+msgctxt "field:carrier.api,create_uid:"
+msgid "Create User"
+msgstr "Usuari de creació"
+
+msgctxt "field:carrier.api,debug:"
+msgid "Debug"
+msgstr "Debug"
+
+msgctxt "field:carrier.api,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:carrier.api,password:"
+msgid "Password"
+msgstr "Contrasenya"
+
+msgctxt "field:carrier.api,rec_name:"
+msgid "Name"
+msgstr "Nom del camp"
+
+msgctxt "field:carrier.api,url:"
+msgid "URL"
+msgstr "URL"
+
+msgctxt "field:carrier.api,username:"
+msgid "Username"
+msgstr "Nom usuari"
+
+msgctxt "field:carrier.api,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:carrier.api,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "model:carrier.api,name:"
+msgid "Carrier API"
+msgstr "Transportiste API"
+
+msgctxt "model:ir.action,name:act_carrier_api_form"
+msgid "Carriers API"
+msgstr "Transportistes API"
+
+msgctxt "model:ir.ui.menu,name:menu_carrier_api_form"
+msgid "Carriers API"
+msgstr "Transportistes API"
