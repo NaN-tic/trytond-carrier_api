@@ -18,6 +18,7 @@ class CarrierApi(ModelSQL, ModelView):
     url = fields.Char('URL', required=True)
     username = fields.Char('Username', required=True)
     password = fields.Char('Password', required=True)
+    reference = fields.Boolean('Reference', help='Use reference from carrier')
     debug = fields.Boolean('Debug')
 
     @classmethod
@@ -42,6 +43,10 @@ class CarrierApi(ModelSQL, ModelView):
     @staticmethod
     def default_company():
         return Transaction().context.get('company')
+
+    @staticmethod
+    def default_reference():
+        return True
 
     @classmethod
     @ModelView.button
