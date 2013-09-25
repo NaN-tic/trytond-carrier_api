@@ -3,6 +3,7 @@
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <tree string="Carrier API">
     <field name="carrier"/>
+    <field name="method"/>
     <field name="debug"/>
     <field name="company"/>
 </tree>

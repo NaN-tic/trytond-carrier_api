@@ -13,7 +13,8 @@ class CarrierApi(ModelSQL, ModelView):
     __name__ = 'carrier.api'
     _rec_name = 'carrier'
     company = fields.Many2One('company.company', 'Company', required=True)
-    carrier = fields.Selection('get_carrier_app', 'Carrier APP', required=True)
+    carrier = fields.Many2One('carrier', 'Carrier', required=True)
+    method = fields.Selection('get_carrier_app', 'Method', required=True)
     url = fields.Char('URL', required=True)
     username = fields.Char('Username', required=True)
     password = fields.Char('Password', required=True)
