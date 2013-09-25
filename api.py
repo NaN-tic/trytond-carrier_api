@@ -53,11 +53,8 @@ class CarrierApi(ModelSQL, ModelView):
     def test_connection(self, apis):
         """
         Test connection Carrier API - Webservices
-        Call method test_namecarrier - if exist
+        Call method test_methodname
         """
         for api in apis:
-            try:
-                test = getattr(api, 'test_%s' % api.carrier)
-                test(api)
-            except:
-                self.raise_user_error('connection_error')
+            test = getattr(api, 'test_%s' % api.method)
+            test(api)
