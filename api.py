@@ -4,6 +4,7 @@
 from trytond.model import fields, ModelSQL, ModelView
 from trytond.pool import Pool
 from trytond.transaction import Transaction
+from trytond.pyson import Eval
 
 __all__ = ['CarrierApi']
 
@@ -15,6 +16,8 @@ class CarrierApi(ModelSQL, ModelView):
     company = fields.Many2One('company.company', 'Company', required=True)
     carrier = fields.Many2One('carrier', 'Carrier', required=True)
     method = fields.Selection('get_carrier_app', 'Method', required=True)
+    service = fields.Many2One('carrier.service', 'Service', 
+            depends=['carrier'], domain=[('carrier', '=', Eval('carrier'))])
     url = fields.Char('URL', required=True)
     username = fields.Char('Username', required=True)
     password = fields.Char('Password', required=True)
