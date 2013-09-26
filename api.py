@@ -22,6 +22,9 @@ class CarrierApi(ModelSQL, ModelView):
     username = fields.Char('Username', required=True)
     password = fields.Char('Password', required=True)
     reference = fields.Boolean('Reference', help='Use reference from carrier')
+    phone = fields.Char('Phone')
+    zips = fields.Text('Zip',
+            help='Zip codes not send to carrier, separated by comma')
     debug = fields.Boolean('Debug')
 
     @classmethod
