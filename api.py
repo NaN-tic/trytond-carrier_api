@@ -64,14 +64,6 @@ class CarrierApi(ModelSQL, ModelView):
                 return service.code
         return api.service.code
 
-    @staticmethod
-    def carrier_unaccent(string):
-        """Return unicode and remove accent and some other characters"""
-        string = unicodedata.normalize('NFKD', unicode(string)).encode('ascii', 'ignore')
-        string = string.replace(unicode('º','UTF-8'), '')
-        string = string.replace(unicode('ª','UTF-8'), '')
-        return string
-
     @classmethod
     @ModelView.button
     def test_connection(self, apis):
