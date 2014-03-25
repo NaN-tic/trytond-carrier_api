@@ -17,7 +17,7 @@ class CarrierApi(ModelSQL, ModelView):
     company = fields.Many2One('company.company', 'Company', required=True)
     carrier = fields.Many2One('carrier', 'Carrier', required=True)
     method = fields.Selection('get_carrier_app', 'Method', required=True)
-    service = fields.Many2One('carrier.service', 'Service', 
+    service = fields.Many2One('carrier.service', 'Service', required=True, 
             depends=['carrier'], domain=[('carrier', '=', Eval('carrier'))])
     vat = fields.Char('VAT', required=True)
     url = fields.Char('URL', required=True)
@@ -59,7 +59,7 @@ class CarrierApi(ModelSQL, ModelView):
     @staticmethod
     def get_default_carrier_service(api):
         """Get default service carrier"""
-        for service in api.services:
+        for service in api.carrier.services:
             if service.default:
                 return service.code
         return api.service.code
