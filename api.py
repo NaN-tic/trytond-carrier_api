@@ -61,8 +61,8 @@ class CarrierApi(ModelSQL, ModelView):
         """Get default service carrier"""
         for service in api.carrier.services:
             if service.default:
-                return service.code
-        return api.service.code
+                return service
+        return api.service
 
     @classmethod
     @ModelView.button
