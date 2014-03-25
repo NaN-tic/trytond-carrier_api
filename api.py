@@ -53,6 +53,13 @@ class CarrierApi(ModelSQL, ModelView):
     def default_reference():
         return True
 
+    def get_default_carrier_service(self, api):
+        """Get default service carrier"""
+        from service in api.services:
+            if service.default:
+                return service.code
+        return api.service.code
+
     @classmethod
     @ModelView.button
     def test_connection(self, apis):
