@@ -19,6 +19,7 @@ class CarrierApi(ModelSQL, ModelView):
     method = fields.Selection('get_carrier_app', 'Method', required=True)
     service = fields.Many2One('carrier.service', 'Service', 
             depends=['carrier'], domain=[('carrier', '=', Eval('carrier'))])
+    vat = fields.Char('VAT', required=True)
     url = fields.Char('URL', required=True)
     username = fields.Char('Username', required=True)
     password = fields.Char('Password', required=True)
