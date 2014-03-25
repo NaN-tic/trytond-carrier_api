@@ -4,6 +4,7 @@
 from trytond.model import fields, ModelSQL, ModelView
 from trytond.transaction import Transaction
 from trytond.pyson import Eval
+import unicodedata
 
 __all__ = ['CarrierApi']
 
@@ -53,12 +54,21 @@ class CarrierApi(ModelSQL, ModelView):
     def default_reference():
         return True
 
-    def get_default_carrier_service(self, api):
+    @staticmethod
+    def get_default_carrier_service(api):
         """Get default service carrier"""
-        from service in api.services:
+        for service in api.services:
             if service.default:
                 return service.code
         return api.service.code
+
+    @staticmethod
+    def carrier_unaccent(string):
+        """Return unicode and remove accent and some other characters"""
+        string = unicodedata.normalize('NFKD', unicode(string)).encode('ascii', 'ignore')
+        string = string.replace(unicode('º','UTF-8'), '')
+        string = string.replace(unicode('ª','UTF-8'), '')
+        return string
 
     @classmethod
     @ModelView.button
