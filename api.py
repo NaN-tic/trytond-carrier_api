@@ -3,9 +3,11 @@
 #The COPYRIGHT file at the top level of this repository contains 
 #the full copyright notices and license terms.
 from trytond.model import fields, ModelSQL, ModelView
+from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
 
-__all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiCarrier']
+__all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2', 'CarrierApiCarrier']
+__metaclass__ = PoolMeta
 
 
 class CarrierApiService(ModelSQL, ModelView):
@@ -13,7 +15,6 @@ class CarrierApiService(ModelSQL, ModelView):
     __name__ = 'carrier.api.service'
     name = fields.Char('Name', required=True, translate=True)
     code = fields.Char('Code', required=True)
-    api = fields.Many2One('carrier.api', 'API', required=True)
 
 
 class CarrierApi(ModelSQL, ModelView):
@@ -78,6 +79,11 @@ class CarrierApi(ModelSQL, ModelView):
         for api in apis:
             test = getattr(api, 'test_%s' % api.method)
             test(api)
+
+
+class CarrierApiService2:
+    __name__ = 'carrier.api.service'
+    api = fields.Many2One('carrier.api', 'API', required=True)
 
 
 class CarrierApiCarrier(ModelSQL):

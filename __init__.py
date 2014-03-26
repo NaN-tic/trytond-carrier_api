@@ -8,5 +8,6 @@ def register():
     Pool.register(
         CarrierApiService,
         CarrierApi,
+        CarrierApiService2,
         CarrierApiCarrier,
         module='carrier_api', type_='model')
