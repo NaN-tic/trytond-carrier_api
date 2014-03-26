@@ -4,21 +4,28 @@
 #the full copyright notices and license terms.
 from trytond.model import fields, ModelSQL, ModelView
 from trytond.transaction import Transaction
-from trytond.pyson import Eval
-import unicodedata
 
-__all__ = ['CarrierApi']
+__all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiCarrier']
+
+
+class CarrierApiService(ModelSQL, ModelView):
+    'Carrier API Service'
+    __name__ = 'carrier.api.service'
+    name = fields.Char('Name', required=True, translate=True)
+    code = fields.Char('Code', required=True)
+    api = fields.Many2One('carrier.api', 'API', required=True)
 
 
 class CarrierApi(ModelSQL, ModelView):
     'Carrier API'
     __name__ = 'carrier.api'
-    _rec_name = 'carrier'
+    _rec_name = 'method'
     company = fields.Many2One('company.company', 'Company', required=True)
-    carrier = fields.Many2One('carrier', 'Carrier', required=True)
+    carriers = fields.Many2Many('carrier.api-carrier.carrier',
+            'api', 'carrier', 'Carriers', required=True)
     method = fields.Selection('get_carrier_app', 'Method', required=True)
-    service = fields.Many2One('carrier.service', 'Service', required=True, 
-            depends=['carrier'], domain=[('carrier', '=', Eval('carrier'))])
+    services = fields.One2Many('carrier.api.service', 'api', 'Services')
+    default_service = fields.Many2One('carrier.api.service', 'Service')
     vat = fields.Char('VAT', required=True)
     url = fields.Char('URL', required=True)
     username = fields.Char('Username', required=True)
@@ -58,11 +65,8 @@ class CarrierApi(ModelSQL, ModelView):
 
     @staticmethod
     def get_default_carrier_service(api):
-        """Get default service carrier"""
-        for service in api.carrier.services:
-            if service.default:
-                return service
-        return api.service
+        """Get default service API"""
+        return api.default_service
 
     @classmethod
     @ModelView.button
@@ -74,3 +78,13 @@ class CarrierApi(ModelSQL, ModelView):
         for api in apis:
             test = getattr(api, 'test_%s' % api.method)
             test(api)
+
+
+class CarrierApiCarrier(ModelSQL):
+    'Carrier API - Carriers'
+    __name__ = 'carrier.api-carrier.carrier'
+    _table = 'carrier_api_carrier_rel'
+    api = fields.Many2One('carrier.api', 'API', ondelete='CASCADE',
+        select=True, required=True)
+    carrier = fields.Many2One('carrier', 'Carrier',
+            ondelete='RESTRICT', select=True, required=True)

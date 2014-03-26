@@ -2,13 +2,12 @@
 <!-- This file is part carrier_api module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <form string="Carrier API">
-    <label name="carrier"/>
-    <field name="carrier"/>
     <label name="method"/>
     <field name="method"/>
-    <label name="service"/>
-    <field name="service"/>
     <notebook>
+        <page string="Carriers" id="carriers">
+            <field name="carriers"/>
+        </page>
         <page string="API" id="api">
             <label name="url"/>
             <field name="url"/>
@@ -30,6 +29,11 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="phone"/>
             <label name="company"/>
             <field name="company"/>
+        </page>
+        <page string="Services" id="services">
+            <label name="default_service"/>
+            <field name="default_service"/>
+            <field name="services" colspan="6"/>
         </page>
         <page string="Zip" id="zips">
             <field name="zips"/>

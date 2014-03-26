@@ -6,5 +6,7 @@ from .api import *
 
 def register():
     Pool.register(
+        CarrierApiService,
         CarrierApi,
+        CarrierApiCarrier,
         module='carrier_api', type_='model')
