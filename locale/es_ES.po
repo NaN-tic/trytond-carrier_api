@@ -10,10 +10,6 @@ msgctxt "error:carrier.api:"
 msgid "Test connection failed!"
 msgstr "¡Prueba de conexión fallida!"
 
-msgctxt "field:carrier.api,carrier:"
-msgid "Carrier"
-msgstr "Transportista"
-
 msgctxt "field:carrier.api,company:"
 msgid "Company"
 msgstr "Empresa"
@@ -53,10 +49,6 @@ msgstr "Nombre"
 msgctxt "field:carrier.api,reference:"
 msgid "Reference"
 msgstr "Referencia"
-
-msgctxt "field:carrier.api,service:"
-msgid "Service"
-msgstr "Servicio"
 
 msgctxt "field:carrier.api,url:"
 msgid "URL"
@@ -108,8 +100,16 @@ msgid "Carrier API"
 msgstr "API transportista"
 
 msgctxt "view:carrier.api:"
+msgid "Carriers"
+msgstr "Transportistas"
+
+msgctxt "view:carrier.api:"
 msgid "General"
 msgstr "General"
+
+msgctxt "view:carrier.api:"
+msgid "Services"
+msgstr "Servicios"
 
 msgctxt "view:carrier.api:"
 msgid "Test"
