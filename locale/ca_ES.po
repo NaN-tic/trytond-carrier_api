@@ -4,15 +4,15 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "error:carrier.api:"
 msgid "Test connection are successfully!"
-msgstr "La connexió s'ha realitzat correctament"
+msgstr "¡Prova de connexió realitzada amb éxit!"
 
 msgctxt "error:carrier.api:"
 msgid "Test connection failed!"
-msgstr "No s'ha pogut realitzar la connexió"
+msgstr "¡Prova de connexió fallida!"
 
 msgctxt "field:carrier.api,carrier:"
-msgid "Carrier APP"
-msgstr "Transportista APP"
+msgid "Carrier"
+msgstr "Transportista"
 
 msgctxt "field:carrier.api,company:"
 msgid "Company"
@@ -20,52 +20,105 @@ msgstr "Empresa"
 
 msgctxt "field:carrier.api,create_date:"
 msgid "Create Date"
-msgstr "Data de creació"
+msgstr "Data Creació"
 
 msgctxt "field:carrier.api,create_uid:"
 msgid "Create User"
-msgstr "Usuari de creació"
+msgstr "Usuari Creació"
 
 msgctxt "field:carrier.api,debug:"
 msgid "Debug"
-msgstr "Debug"
+msgstr "Depuració"
 
 msgctxt "field:carrier.api,id:"
 msgid "ID"
 msgstr "ID"
 
+msgctxt "field:carrier.api,method:"
+msgid "Method"
+msgstr "Métode"
+
 msgctxt "field:carrier.api,password:"
 msgid "Password"
 msgstr "Contrasenya"
 
+msgctxt "field:carrier.api,phone:"
+msgid "Phone"
+msgstr "Telèfon"
+
 msgctxt "field:carrier.api,rec_name:"
 msgid "Name"
-msgstr "Nom del camp"
+msgstr "Nom"
+
+msgctxt "field:carrier.api,reference:"
+msgid "Reference"
+msgstr "Referència"
+
+msgctxt "field:carrier.api,service:"
+msgid "Service"
+msgstr "Servei"
 
 msgctxt "field:carrier.api,url:"
 msgid "URL"
 msgstr "URL"
 
+#, fuzzy
 msgctxt "field:carrier.api,username:"
 msgid "Username"
-msgstr "Nom usuari"
+msgstr "Nom de usuari"
 
 msgctxt "field:carrier.api,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:carrier.api,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuari de modificació"
+
+msgctxt "field:carrier.api,zips:"
+msgid "Zip"
+msgstr "Codi postal"
+
+msgctxt "help:carrier.api,reference:"
+msgid "Use reference from carrier"
+msgstr "Utilitzeu referència del transportista"
+
+msgctxt "help:carrier.api,zips:"
+msgid "Zip codes not send to carrier, separated by comma"
+msgstr "Codis postals no coberts pel transportista, separats per comes"
 
 msgctxt "model:carrier.api,name:"
 msgid "Carrier API"
-msgstr "Transportiste API"
+msgstr "API transportista"
 
 msgctxt "model:ir.action,name:act_carrier_api_form"
 msgid "Carriers API"
-msgstr "Transportistes API"
+msgstr "API transportistes"
 
 msgctxt "model:ir.ui.menu,name:menu_carrier_api_form"
 msgid "Carriers API"
-msgstr "Transportistes API"
+msgstr "API transportistes"
+
+msgctxt "view:carrier.api:"
+msgid "API"
+msgstr "API"
+
+msgctxt "view:carrier.api:"
+msgid "Carrier API"
+msgstr "API transportista"
+
+msgctxt "view:carrier.api:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:carrier.api:"
+msgid "Test"
+msgstr "Prova"
+
+msgctxt "view:carrier.api:"
+msgid "Test connection"
+msgstr "Prova de connexió"
+
+msgctxt "view:carrier.api:"
+msgid "Zip"
+msgstr "Codi postal"
