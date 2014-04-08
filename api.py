@@ -5,6 +5,7 @@
 from trytond.model import fields, ModelSQL, ModelView
 from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
+from trytond.pyson import Eval, Bool
 
 __all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2', 'CarrierApiCarrier']
 __metaclass__ = PoolMeta
@@ -26,7 +27,11 @@ class CarrierApi(ModelSQL, ModelView):
             'api', 'carrier', 'Carriers', required=True)
     method = fields.Selection('get_carrier_app', 'Method', required=True)
     services = fields.One2Many('carrier.api.service', 'api', 'Services')
-    default_service = fields.Many2One('carrier.api.service', 'Service')
+    default_service = fields.Many2One('carrier.api.service', 'Service',
+        help = 'Select a default service after save api and add services',
+        states = {
+            'required': Bool(Eval('services', [])),
+        }, depends=['services'])
     vat = fields.Char('VAT', required=True)
     url = fields.Char('URL', required=True)
     username = fields.Char('Username', required=True)
