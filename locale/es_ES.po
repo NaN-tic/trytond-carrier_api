@@ -16,11 +16,11 @@ msgstr "Empresa"
 
 msgctxt "field:carrier.api,create_date:"
 msgid "Create Date"
-msgstr "Fecha Creación"
+msgstr "Fecha creación"
 
 msgctxt "field:carrier.api,create_uid:"
 msgid "Create User"
-msgstr "Usuario Creación"
+msgstr "Usuario creación"
 
 msgctxt "field:carrier.api,debug:"
 msgid "Debug"
@@ -58,13 +58,17 @@ msgctxt "field:carrier.api,username:"
 msgid "Username"
 msgstr "Nombre de usuario"
 
+msgctxt "field:carrier.api,weight:"
+msgid "Weight"
+msgstr "Peso"
+
 msgctxt "field:carrier.api,write_date:"
 msgid "Write Date"
-msgstr "Fecha de modificación"
+msgstr "Fecha modificación"
 
 msgctxt "field:carrier.api,write_uid:"
 msgid "Write User"
-msgstr "Usuario de modificación"
+msgstr "Usuario modificación"
 
 msgctxt "field:carrier.api,zips:"
 msgid "Zip"
@@ -73,6 +77,10 @@ msgstr "Código postal"
 msgctxt "help:carrier.api,reference:"
 msgid "Use reference from carrier"
 msgstr "Utilice referencia del transportista"
+
+msgctxt "help:carrier.api,weight:"
+msgid "Send shipments with weight"
+msgstr "Envia los albarans con el peso"
 
 msgctxt "help:carrier.api,zips:"
 msgid "Zip codes not send to carrier, separated by comma"
