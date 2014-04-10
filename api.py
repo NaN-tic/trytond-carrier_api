@@ -37,6 +37,7 @@ class CarrierApi(ModelSQL, ModelView):
     username = fields.Char('Username', required=True)
     password = fields.Char('Password', required=True)
     reference = fields.Boolean('Reference', help='Use reference from carrier')
+    weight = fields.Boolean('Weight', help='Send shipments with weight')
     phone = fields.Char('Phone')
     zips = fields.Text('Zip',
             help='Zip codes not send to carrier, separated by comma')
@@ -64,6 +65,10 @@ class CarrierApi(ModelSQL, ModelView):
     @staticmethod
     def default_company():
         return Transaction().context.get('company')
+
+    @staticmethod
+    def default_weight():
+        return True
 
     @staticmethod
     def default_reference():
