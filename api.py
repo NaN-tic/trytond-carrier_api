@@ -29,6 +29,7 @@ class CarrierApi(ModelSQL, ModelView):
     services = fields.One2Many('carrier.api.service', 'api', 'Services')
     default_service = fields.Many2One('carrier.api.service', 'Service',
         help = 'Select a default service after save api and add services',
+        domain=[('api', '=', Eval('id'))],
         states = {
             'required': Bool(Eval('services', [])),
         }, depends=['services'])
