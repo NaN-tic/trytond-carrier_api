@@ -6,4 +6,6 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
     <field name="name"/>
     <label name="code"/>
     <field name="code"/>
+    <label name="api"/>
+    <field name="api"/>
 </form>
