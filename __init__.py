@@ -3,6 +3,8 @@
 #the full copyright notices and license terms.
 from trytond.pool import Pool
 from .api import *
+from .carrier import *
+
 
 def register():
     Pool.register(
@@ -10,4 +12,5 @@ def register():
         CarrierApi,
         CarrierApiService2,
         CarrierApiCarrier,
+        Carrier,
         module='carrier_api', type_='model')
