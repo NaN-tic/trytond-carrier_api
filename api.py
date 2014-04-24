@@ -28,11 +28,8 @@ class CarrierApi(ModelSQL, ModelView):
     method = fields.Selection('get_carrier_app', 'Method', required=True)
     services = fields.One2Many('carrier.api.service', 'api', 'Services')
     default_service = fields.Many2One('carrier.api.service', 'Service',
-        help = 'Select a default service after save api and add services',
-        domain=[('api', '=', Eval('id'))],
-        states = {
-            'required': Bool(Eval('services', [])),
-        }, depends=['services'])
+        help='Select a default service after save api and add services',
+        domain=[('api', '=', Eval('id'))])
     vat = fields.Char('VAT', required=True)
     url = fields.Char('URL', required=True)
     username = fields.Char('Username', required=True)
