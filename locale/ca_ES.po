@@ -10,6 +10,14 @@ msgctxt "error:carrier.api:"
 msgid "Test connection failed!"
 msgstr "¡Prova de connexió fallida!"
 
+msgctxt "field:carrier,service:"
+msgid "Service"
+msgstr "Servei"
+
+msgctxt "field:carrier.api,carriers:"
+msgid "Carriers"
+msgstr "Transportistes"
+
 msgctxt "field:carrier.api,company:"
 msgid "Company"
 msgstr "Empresa"
@@ -25,6 +33,10 @@ msgstr "Usuari creació"
 msgctxt "field:carrier.api,debug:"
 msgid "Debug"
 msgstr "Depuració"
+
+msgctxt "field:carrier.api,default_service:"
+msgid "Service"
+msgstr "Servei"
 
 msgctxt "field:carrier.api,id:"
 msgid "ID"
@@ -50,6 +62,10 @@ msgctxt "field:carrier.api,reference:"
 msgid "Reference"
 msgstr "Referència"
 
+msgctxt "field:carrier.api,services:"
+msgid "Services"
+msgstr "Serveis"
+
 msgctxt "field:carrier.api,url:"
 msgid "URL"
 msgstr "URL"
@@ -57,6 +73,10 @@ msgstr "URL"
 msgctxt "field:carrier.api,username:"
 msgid "Username"
 msgstr "Nom d'usuari"
+
+msgctxt "field:carrier.api,vat:"
+msgid "VAT"
+msgstr "CIF/NIF"
 
 msgctxt "field:carrier.api,weight:"
 msgid "Weight"
@@ -74,6 +94,78 @@ msgctxt "field:carrier.api,zips:"
 msgid "Zip"
 msgstr "Codi postal"
 
+msgctxt "field:carrier.api-carrier.carrier,api:"
+msgid "API"
+msgstr "API"
+
+msgctxt "field:carrier.api-carrier.carrier,carrier:"
+msgid "Carrier"
+msgstr "Transportista"
+
+msgctxt "field:carrier.api-carrier.carrier,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:carrier.api-carrier.carrier,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:carrier.api-carrier.carrier,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:carrier.api-carrier.carrier,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:carrier.api-carrier.carrier,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:carrier.api-carrier.carrier,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:carrier.api.service,api:"
+msgid "API"
+msgstr "API"
+
+msgctxt "field:carrier.api.service,code:"
+msgid "Code"
+msgstr "Codi"
+
+msgctxt "field:carrier.api.service,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:carrier.api.service,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:carrier.api.service,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:carrier.api.service,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:carrier.api.service,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:carrier.api.service,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:carrier.api.service,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "help:carrier.api,default_service:"
+msgid "Select a default service after save api and add services"
+msgstr "Selecciona el servei per defecte després de guardar els serveis"
+
 msgctxt "help:carrier.api,reference:"
 msgid "Use reference from carrier"
 msgstr "Utilitzeu referència del transportista"
@@ -89,6 +181,14 @@ msgstr "Codis postals no coberts pel transportista, separats per comes"
 msgctxt "model:carrier.api,name:"
 msgid "Carrier API"
 msgstr "API transportista"
+
+msgctxt "model:carrier.api-carrier.carrier,name:"
+msgid "Carrier API - Carriers"
+msgstr "API Transportista - Transportistes"
+
+msgctxt "model:carrier.api.service,name:"
+msgid "Carrier API Service"
+msgstr "Servei API transportista"
 
 msgctxt "model:ir.action,name:act_carrier_api_form"
 msgid "Carriers API"
