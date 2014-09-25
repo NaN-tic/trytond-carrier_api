@@ -14,7 +14,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <label name="username"/>
             <field name="username"/>
             <label name="password"/>
-            <field name="password"/>
+            <field name="password" widget="password"/>
             <label name="debug"/>
             <field name="debug"/>
             <separator string="Test" colspan="6" id="test"/>
