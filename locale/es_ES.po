@@ -36,7 +36,7 @@ msgstr "Depuración"
 
 msgctxt "field:carrier.api,default_service:"
 msgid "Service"
-msgstr "Servicios"
+msgstr "Servicio"
 
 msgctxt "field:carrier.api,id:"
 msgid "ID"
