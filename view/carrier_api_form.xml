@@ -23,6 +23,8 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <page string="General" id="general">
             <label name="reference"/>
             <field name="reference"/>
+            <label name="reference_origin"/>
+            <field name="reference_origin"/>
             <label name="vat"/>
             <field name="vat"/>
             <label name="phone"/>

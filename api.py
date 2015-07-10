@@ -36,6 +36,8 @@ class CarrierApi(ModelSQL, ModelView):
     username = fields.Char('Username', required=True)
     password = fields.Char('Password', required=True)
     reference = fields.Boolean('Reference', help='Use reference from carrier')
+    reference_origin = fields.Boolean('Reference Origin',
+        help='Use origin field as the reference record')
     weight = fields.Boolean('Weight', help='Send shipments with weight')
     phone = fields.Char('Phone')
     zips = fields.Text('Zip',
