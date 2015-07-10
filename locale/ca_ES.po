@@ -62,6 +62,10 @@ msgctxt "field:carrier.api,reference:"
 msgid "Reference"
 msgstr "Referència"
 
+msgctxt "field:carrier.api,reference_origin:"
+msgid "Reference Origin"
+msgstr "Origen referencia"
+
 msgctxt "field:carrier.api,services:"
 msgid "Services"
 msgstr "Serveis"
@@ -168,7 +172,11 @@ msgstr "Selecciona el servei per defecte després de guardar els serveis"
 
 msgctxt "help:carrier.api,reference:"
 msgid "Use reference from carrier"
-msgstr "Utilitzeu referència del transportista"
+msgstr "Utilitza la referència del transportista"
+
+msgctxt "help:carrier.api,reference_origin:"
+msgid "Use origin field as the reference record"
+msgstr "Utilitza el camp origen com a referencia"
 
 msgctxt "help:carrier.api,weight:"
 msgid "Send shipments with weight"
@@ -197,6 +205,10 @@ msgstr "API transportistes"
 msgctxt "model:ir.ui.menu,name:menu_carrier_api_form"
 msgid "Carriers API"
 msgstr "API transportistes"
+
+msgctxt "view:carrier.api.service:"
+msgid "Carrier API Service"
+msgstr "Servei API transportista"
 
 msgctxt "view:carrier.api:"
 msgid "API"
