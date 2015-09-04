@@ -5,7 +5,7 @@
 from trytond.model import fields, ModelSQL, ModelView
 from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
-from trytond.pyson import Eval, Bool
+from trytond.pyson import Eval, Id
 
 __all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2', 'CarrierApiCarrier']
 __metaclass__ = PoolMeta
@@ -38,7 +38,14 @@ class CarrierApi(ModelSQL, ModelView):
     reference = fields.Boolean('Reference', help='Use reference from carrier')
     reference_origin = fields.Boolean('Reference Origin',
         help='Use origin field as the reference record')
-    weight = fields.Boolean('Weight', help='Send shipments with weight')
+    weight = fields.Boolean('Weight',
+        help='Send shipments with weight')
+    weight_unit = fields.Many2One('product.uom', 'Weight Unit',
+        domain=[('category', '=', Id('product', 'uom_cat_weight'))],
+        help='Default shipments unit')
+    weight_api_unit = fields.Many2One('product.uom', 'Weight API Unit',
+        domain=[('category', '=', Id('product', 'uom_cat_weight'))],
+        help='Default API unit')
     phone = fields.Char('Phone')
     zips = fields.Text('Zip',
             help='Zip codes not send to carrier, separated by comma')
