@@ -86,6 +86,14 @@ msgctxt "field:carrier.api,weight:"
 msgid "Weight"
 msgstr "Peso"
 
+msgctxt "field:carrier.api,weight_api_unit:"
+msgid "Weight API Unit"
+msgstr "Unidad API peso"
+
+msgctxt "field:carrier.api,weight_unit:"
+msgid "Weight Unit"
+msgstr "Unidad peso"
+
 msgctxt "field:carrier.api,write_date:"
 msgid "Write Date"
 msgstr "Fecha modificación"
@@ -181,6 +189,14 @@ msgstr "Utilitza el campo origen como referencia"
 msgctxt "help:carrier.api,weight:"
 msgid "Send shipments with weight"
 msgstr "Envia los albarans con el peso"
+
+msgctxt "help:carrier.api,weight_api_unit:"
+msgid "Default API unit"
+msgstr "La unidad API por defecto"
+
+msgctxt "help:carrier.api,weight_unit:"
+msgid "Default shipments unit"
+msgstr "La unidad de los albaranes por defecto"
 
 msgctxt "help:carrier.api,zips:"
 msgid "Zip codes not send to carrier, separated by comma"
