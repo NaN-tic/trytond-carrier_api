@@ -8,7 +8,6 @@ from trytond.transaction import Transaction
 from trytond.pyson import Eval, Id
 
 __all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2', 'CarrierApiCarrier']
-__metaclass__ = PoolMeta
 
 
 class CarrierApiService(ModelSQL, ModelView):
@@ -100,6 +99,7 @@ class CarrierApi(ModelSQL, ModelView):
 
 
 class CarrierApiService2:
+    __metaclass__ = PoolMeta
     __name__ = 'carrier.api.service'
     api = fields.Many2One('carrier.api', 'API', required=True)
 
