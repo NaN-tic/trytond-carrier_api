@@ -48,8 +48,10 @@ class CarrierApi(ModelSQL, ModelView):
         help='Default API unit')
     phone = fields.Char('Phone')
     zips = fields.Text('Zip',
-            help='Zip codes not send to carrier, separated by comma')
+        help='Zip codes not send to carrier, separated by comma')
     debug = fields.Boolean('Debug')
+    timeout = fields.Integer('Timeout',
+        help='Total of seconds the connection will be lost')
 
     @classmethod
     def __setup__(cls):
