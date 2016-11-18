@@ -5,9 +5,9 @@ from trytond.model import fields
 from trytond.pool import PoolMeta
 
 __all__ = ['Carrier']
-__metaclass__ = PoolMeta
 
 
 class Carrier:
+    __metaclass__ = PoolMeta
     __name__ = 'carrier'
     service = fields.Many2One('carrier.api.service', 'Service')
