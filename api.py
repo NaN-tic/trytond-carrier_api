@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 #This file is part carrier_api module for Tryton.
-#The COPYRIGHT file at the top level of this repository contains 
+#The COPYRIGHT file at the top level of this repository contains
 #the full copyright notices and license terms.
 from trytond.model import fields, ModelSQL, ModelView
 from trytond.pool import PoolMeta
@@ -91,14 +91,11 @@ class CarrierApi(ModelSQL, ModelView):
 
     @classmethod
     @ModelView.button
-    def test_connection(self, apis):
-        """
-        Test connection Carrier API - Webservices
-        Call method test_methodname
-        """
+    def test_connection(cls, apis):
+        'Test API carrier connection'
         for api in apis:
-            test = getattr(api, 'test_%s' % api.method)
-            test(api)
+            getattr(cls, 'test_%s' % api.method)(api)
+
 
 
 class CarrierApiService2:
