@@ -1,18 +1,26 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "error:carrier.api:"
 msgid "Test connection are successfully!"
-msgstr "¡Prova de connexió realitzada amb éxit!"
+msgstr "Prova de connexió realitzada amb éxit!"
 
 msgctxt "error:carrier.api:"
 msgid "Test connection failed!"
-msgstr "¡Prova de connexió fallida!"
+msgstr "Prova de connexió fallida!"
+
+msgctxt "field:carrier,apis:"
+msgid "Carrier API"
+msgstr "API transportista"
 
 msgctxt "field:carrier,service:"
 msgid "Service"
 msgstr "Servei"
+
+msgctxt "field:carrier,services:"
+msgid "Services"
+msgstr "Serveis"
 
 msgctxt "field:carrier.api,carriers:"
 msgid "Carriers"
@@ -70,6 +78,10 @@ msgctxt "field:carrier.api,services:"
 msgid "Services"
 msgstr "Serveis"
 
+msgctxt "field:carrier.api,timeout:"
+msgid "Timeout"
+msgstr "Timeout"
+
 msgctxt "field:carrier.api,url:"
 msgid "URL"
 msgstr "URL"
@@ -78,13 +90,13 @@ msgctxt "field:carrier.api,username:"
 msgid "Username"
 msgstr "Nom d'usuari"
 
-msgctxt "field:carrier.api,timeout:"
-msgid "Timeout"
-msgstr "Timeout"
-
 msgctxt "field:carrier.api,vat:"
 msgid "VAT"
 msgstr "CIF/NIF"
+
+msgctxt "field:carrier.api,warehouse:"
+msgid "Warehouse"
+msgstr "Magatzem"
 
 msgctxt "field:carrier.api,weight:"
 msgid "Weight"
@@ -190,6 +202,10 @@ msgctxt "help:carrier.api,reference_origin:"
 msgid "Use origin field as the reference record"
 msgstr "Utilitza el camp origen com a referencia"
 
+msgctxt "help:carrier.api,timeout:"
+msgid "Total of seconds the connection will be lost"
+msgstr "Número de segons en que es perdrà la connexió"
+
 msgctxt "help:carrier.api,weight:"
 msgid "Send shipments with weight"
 msgstr "Envia els albarans amb el pes"
@@ -201,10 +217,6 @@ msgstr "La unitat API per defecte"
 msgctxt "help:carrier.api,weight_unit:"
 msgid "Default shipments unit"
 msgstr "La unitat dels albarans per defecte"
-
-msgctxt "help:carrier.api,timeout:"
-msgid "Total of seconds the connection will be lost"
-msgstr "Número de segons en que es perdrà la connexió"
 
 msgctxt "help:carrier.api,zips:"
 msgid "Zip codes not send to carrier, separated by comma"
@@ -229,6 +241,10 @@ msgstr "API transportistes"
 msgctxt "model:ir.ui.menu,name:menu_carrier_api_form"
 msgid "Carriers API"
 msgstr "API transportistes"
+
+msgctxt "model:res.group,name:group_carrier_api_admin"
+msgid "Carrier API"
+msgstr "API transportista"
 
 msgctxt "view:carrier.api.service:"
 msgid "Carrier API Service"

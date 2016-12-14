@@ -33,6 +33,8 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="phone"/>
             <label name="company"/>
             <field name="company"/>
+            <label name="warehouse"/>
+            <field name="warehouse"/>
             <label name="weight"/>
             <field name="weight"/>
             <label name="weight_unit"/>
