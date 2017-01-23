@@ -39,6 +39,8 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="weight_unit"/>
             <label name="weight_api_unit"/>
             <field name="weight_api_unit"/>
+            <label name="url_tracking_ref"/>
+            <field name="url_tracking_ref"/>
         </page>
         <page string="Services" id="services">
             <label name="default_service"/>
