@@ -1,10 +1,10 @@
-#
+# 
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "error:carrier.api:"
 msgid "Test connection are successfully!"
-msgstr "Prova de connexió realitzada amb éxit!"
+msgstr "¡Prova de connexió realitzada amb éxit!"
 
 msgctxt "error:carrier.api:"
 msgid "Test connection failed!"
@@ -86,9 +86,17 @@ msgctxt "field:carrier.api,url:"
 msgid "URL"
 msgstr "URL"
 
+msgctxt "field:carrier.api,url_tracking_ref:"
+msgid "URL Tracking Reference"
+msgstr "URL seguiment transportista"
+
 msgctxt "field:carrier.api,username:"
 msgid "Username"
 msgstr "Nom d'usuari"
+
+msgctxt "field:carrier.api,timeout:"
+msgid "Timeout"
+msgstr "Timeout"
 
 msgctxt "field:carrier.api,vat:"
 msgid "VAT"
@@ -202,6 +210,14 @@ msgctxt "help:carrier.api,reference_origin:"
 msgid "Use origin field as the reference record"
 msgstr "Utilitza el camp origen com a referencia"
 
+msgctxt "help:carrier.api,url_tracking_ref:"
+msgid ""
+"Python expression that will be evaluated to generate the tracking uri:\n"
+"- reference: the tracking reference"
+msgstr ""
+"Expressió de Python que s'avaluarà per calcular l'adreça de seguiment del transportista:\n"
+"- reference: la referència del transportista"
+
 msgctxt "help:carrier.api,timeout:"
 msgid "Total of seconds the connection will be lost"
 msgstr "Número de segons en que es perdrà la connexió"
@@ -217,6 +233,10 @@ msgstr "La unitat API per defecte"
 msgctxt "help:carrier.api,weight_unit:"
 msgid "Default shipments unit"
 msgstr "La unitat dels albarans per defecte"
+
+msgctxt "help:carrier.api,timeout:"
+msgid "Total of seconds the connection will be lost"
+msgstr "Número de segons en que es perdrà la connexió"
 
 msgctxt "help:carrier.api,zips:"
 msgid "Zip codes not send to carrier, separated by comma"
