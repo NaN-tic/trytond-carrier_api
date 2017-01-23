@@ -51,6 +51,10 @@ class CarrierApi(ModelSQL, ModelView):
     debug = fields.Boolean('Debug')
     timeout = fields.Integer('Timeout',
         help='Total of seconds the connection will be lost')
+    url_tracking_ref = fields.Char('URL Tracking Reference',
+        help='Python expression that will be evaluated to generate the '
+            'tracking uri:\n'
+            '- reference: the tracking reference')
 
     @classmethod
     def __setup__(cls):
