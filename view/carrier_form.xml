@@ -8,5 +8,6 @@ copyright notices and license terms. -->
         <newline/>
         <separator name="service" colspan="6"/>
         <field name="service" colspan="6"/>
+        <field name="apis" colspan="6"/>
     </xpath>
 </data>

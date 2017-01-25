@@ -8,11 +8,19 @@ msgstr "¡Prova de connexió realitzada amb éxit!"
 
 msgctxt "error:carrier.api:"
 msgid "Test connection failed!"
-msgstr "¡Prova de connexió fallida!"
+msgstr "Prova de connexió fallida!"
+
+msgctxt "field:carrier,apis:"
+msgid "Carrier API"
+msgstr "API transportista"
 
 msgctxt "field:carrier,service:"
 msgid "Service"
 msgstr "Servei"
+
+msgctxt "field:carrier,services:"
+msgid "Services"
+msgstr "Serveis"
 
 msgctxt "field:carrier.api,carriers:"
 msgid "Carriers"
@@ -70,6 +78,10 @@ msgctxt "field:carrier.api,services:"
 msgid "Services"
 msgstr "Serveis"
 
+msgctxt "field:carrier.api,timeout:"
+msgid "Timeout"
+msgstr "Timeout"
+
 msgctxt "field:carrier.api,url:"
 msgid "URL"
 msgstr "URL"
@@ -89,6 +101,10 @@ msgstr "Timeout"
 msgctxt "field:carrier.api,vat:"
 msgid "VAT"
 msgstr "CIF/NIF"
+
+msgctxt "field:carrier.api,warehouse:"
+msgid "Warehouse"
+msgstr "Magatzem"
 
 msgctxt "field:carrier.api,weight:"
 msgid "Weight"
@@ -202,6 +218,10 @@ msgstr ""
 "Expressió de Python que s'avaluarà per calcular l'adreça de seguiment del transportista:\n"
 "- reference: la referència del transportista"
 
+msgctxt "help:carrier.api,timeout:"
+msgid "Total of seconds the connection will be lost"
+msgstr "Número de segons en que es perdrà la connexió"
+
 msgctxt "help:carrier.api,weight:"
 msgid "Send shipments with weight"
 msgstr "Envia els albarans amb el pes"
@@ -241,6 +261,10 @@ msgstr "API transportistes"
 msgctxt "model:ir.ui.menu,name:menu_carrier_api_form"
 msgid "Carriers API"
 msgstr "API transportistes"
+
+msgctxt "model:res.group,name:group_carrier_api_admin"
+msgid "Carrier API"
+msgstr "API transportista"
 
 msgctxt "view:carrier.api.service:"
 msgid "Carrier API Service"
