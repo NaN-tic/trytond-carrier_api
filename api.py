@@ -7,7 +7,8 @@ from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
 from trytond.pyson import Eval, Id
 
-__all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2', 'CarrierApiCarrier']
+__all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2',
+    'CarrierApiCarrier']
 
 
 class CarrierApiService(ModelSQL, ModelView):
@@ -22,6 +23,8 @@ class CarrierApi(ModelSQL, ModelView):
     __name__ = 'carrier.api'
     _rec_name = 'method'
     company = fields.Many2One('company.company', 'Company', required=True)
+    warehouse = fields.Many2One('stock.location', 'Warehouse',
+        domain = [('type', '=', 'warehouse')])
     carriers = fields.Many2Many('carrier.api-carrier.carrier',
             'api', 'carrier', 'Carriers', required=True)
     method = fields.Selection('get_carrier_app', 'Method', required=True)
@@ -69,9 +72,7 @@ class CarrierApi(ModelSQL, ModelView):
 
     @classmethod
     def get_carrier_app(cls):
-        '''
-        Get Carrier APP (Envialia, MRW, DHL,...)
-        '''
+        'Get Carrier APP (Envialia, MRW, DHL,...)'
         res = [('','')]
         return res
 
@@ -98,7 +99,6 @@ class CarrierApi(ModelSQL, ModelView):
         'Test API carrier connection'
         for api in apis:
             getattr(cls, 'test_%s' % api.method)(api)
-
 
 
 class CarrierApiService2:
