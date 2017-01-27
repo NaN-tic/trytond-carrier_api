@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -213,10 +213,10 @@ msgstr "Utilitza el camp origen com a referencia"
 msgctxt "help:carrier.api,url_tracking_ref:"
 msgid ""
 "Python expression that will be evaluated to generate the tracking uri:\n"
-"- reference: the tracking reference"
+"- ${record}: the record object"
 msgstr ""
 "Expressió de Python que s'avaluarà per calcular l'adreça de seguiment del transportista:\n"
-"- reference: la referència del transportista"
+"- ${record}: l'objecte del registre"
 
 msgctxt "help:carrier.api,timeout:"
 msgid "Total of seconds the connection will be lost"

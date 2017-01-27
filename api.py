@@ -6,6 +6,7 @@ from trytond.model import fields, ModelSQL, ModelView
 from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
 from trytond.pyson import Eval, Id
+from genshi.template import TextTemplate
 
 __all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2',
     'CarrierApiCarrier']
@@ -58,7 +59,7 @@ class CarrierApi(ModelSQL, ModelView):
     url_tracking_ref = fields.Char('URL Tracking Reference',
         help='Python expression that will be evaluated to generate the '
             'tracking uri:\n'
-            '- reference: the tracking reference')
+            '- ${record}: the record object')
 
     @classmethod
     def __setup__(cls):
@@ -101,6 +102,18 @@ class CarrierApi(ModelSQL, ModelView):
         for api in apis:
             getattr(cls, 'test_%s' % api.method)(api)
 
+    @staticmethod
+    def template_context(record):
+        'Generate the template context'
+        return {'record': record}
+
+    def render_url_tracking_ref(self, record):
+        'Render Genshi uri tracking ref'
+        if not self.url_tracking_ref:
+            return
+        template = TextTemplate(self.url_tracking_ref)
+        template_context = self.template_context(record)
+        return template.generate(**template_context).render(encoding='UTF-8')
 
 class CarrierApiService2:
     __name__ = 'carrier.api.service'
