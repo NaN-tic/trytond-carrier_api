@@ -94,10 +94,6 @@ msgctxt "field:carrier.api,username:"
 msgid "Username"
 msgstr "Nom d'usuari"
 
-msgctxt "field:carrier.api,timeout:"
-msgid "Timeout"
-msgstr "Timeout"
-
 msgctxt "field:carrier.api,vat:"
 msgid "VAT"
 msgstr "CIF/NIF"
