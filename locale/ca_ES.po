@@ -230,10 +230,6 @@ msgctxt "help:carrier.api,weight_unit:"
 msgid "Default shipments unit"
 msgstr "La unitat dels albarans per defecte"
 
-msgctxt "help:carrier.api,timeout:"
-msgid "Total of seconds the connection will be lost"
-msgstr "Número de segons en que es perdrà la connexió"
-
 msgctxt "help:carrier.api,zips:"
 msgid "Zip codes not send to carrier, separated by comma"
 msgstr "Codis postals no coberts pel transportista, separats per comes"
