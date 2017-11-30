@@ -1,0 +1,148 @@
+====================
+Carrier API Scenario
+====================
+
+Imports::
+
+    >>> import datetime
+    >>> from dateutil.relativedelta import relativedelta
+    >>> from decimal import Decimal
+    >>> from proteus import config, Model, Wizard
+    >>> from trytond.modules.company.tests.tools import create_company, \
+    ...     get_company
+    >>> today = datetime.date.today()
+    >>> yesterday = today - relativedelta(days=1)
+
+Create database::
+
+    >>> config = config.set_trytond()
+    >>> config.pool.test = True
+
+Install carrier_api Module::
+
+    >>> Module = Model.get('ir.module')
+    >>> module, = Module.find([('name', '=', 'carrier_api')])
+    >>> module.click('install')
+    >>> Wizard('ir.module.install_upgrade').execute('upgrade')
+
+Create company::
+
+    >>> _ = create_company()
+    >>> company = get_company()
+
+Reload the context::
+
+    >>> User = Model.get('res.user')
+    >>> config._context = User.get_preferences(True, config.context)
+
+Create countries::
+
+    >>> Country = Model.get('country.country')
+    >>> spain = Country()
+    >>> spain.name = 'Spain'
+    >>> spain.code = 'ES'
+    >>> spain.save()
+
+Create customer::
+
+    >>> Party = Model.get('party.party')
+    >>> customer = Party(name='Customer')
+    >>> customer.save()
+    >>> address, = customer.addresses
+    >>> address.zip = '08720'
+    >>> address.country = spain
+    >>> address.save()
+    >>> customer2 = Party(name='Customer2')
+    >>> customer2.save()
+    >>> address2, = customer2.addresses
+    >>> address2.zip = '08720'
+    >>> address2.country = spain
+    >>> address2.save()
+
+Create category::
+
+    >>> ProductCategory = Model.get('product.category')
+    >>> category = ProductCategory(name='Category')
+    >>> category.save()
+
+Create product::
+
+    >>> ProductUom = Model.get('product.uom')
+    >>> ProductTemplate = Model.get('product.template')
+    >>> Product = Model.get('product.product')
+    >>> unit, = ProductUom.find([('name', '=', 'Unit')])
+    >>> product = Product()
+    >>> template = ProductTemplate()
+    >>> template.name = 'Product'
+    >>> template.category = category
+    >>> template.default_uom = unit
+    >>> template.type = 'goods'
+    >>> template.list_price = Decimal('20')
+    >>> template.cost_price = Decimal('8')
+    >>> template.save()
+    >>> product.template = template
+    >>> product.save()
+
+    >>> service = Product()
+    >>> template = ProductTemplate()
+    >>> template.name = 'Service'
+    >>> template.category = category
+    >>> template.default_uom = unit
+    >>> template.type = 'service'
+    >>> template.list_price = Decimal('20')
+    >>> template.cost_price = Decimal('8')
+    >>> template.save()
+    >>> service.template = template
+    >>> service.save()
+
+Get stock locations::
+
+    >>> Location = Model.get('stock.location')
+    >>> warehouse_loc, = Location.find([('code', '=', 'WH')])
+    >>> supplier_loc, = Location.find([('code', '=', 'SUP')])
+    >>> customer_loc, = Location.find([('code', '=', 'CUS')])
+    >>> output_loc, = Location.find([('code', '=', 'OUT')])
+    >>> storage_loc, = Location.find([('code', '=', 'STO')])
+
+Make 1 unit of the product available::
+
+    >>> StockMove = Model.get('stock.move')
+    >>> incoming_move = StockMove()
+    >>> incoming_move.product = product
+    >>> incoming_move.uom = unit
+    >>> incoming_move.quantity = 10
+    >>> incoming_move.from_location = supplier_loc
+    >>> incoming_move.to_location = storage_loc
+    >>> incoming_move.planned_date = today
+    >>> incoming_move.effective_date = today
+    >>> incoming_move.company = company
+    >>> incoming_move.unit_price = Decimal('1')
+    >>> incoming_move.currency = company.currency
+    >>> incoming_move.click('do')
+
+Create Shipment Out::
+
+    >>> ShipmentOut = Model.get('stock.shipment.out')
+    >>> shipment_out = ShipmentOut()
+    >>> shipment_out.planned_date = today
+    >>> shipment_out.customer = customer
+    >>> shipment_out.warehouse = warehouse_loc
+    >>> shipment_out.company = company
+    >>> shipment_out.outgoing_moves.extend([StockMove(), StockMove()])
+    >>> for move in shipment_out.outgoing_moves:
+    ...     move.product = product
+    ...     move.uom =unit
+    ...     move.quantity = 1
+    ...     move.from_location = output_loc
+    ...     move.to_location = customer_loc
+    ...     move.company = company
+    ...     move.unit_price = Decimal('1')
+    ...     move.currency = company.currency
+    >>> shipment_out.save()
+    >>> shipment_out.click('wait')
+    >>> shipment_out.click('assign_try')
+    True
+    >>> shipment_out.reload()
+    >>> shipment_out.click('pack')
+    >>> shipment_out.state
+    u'packed'
