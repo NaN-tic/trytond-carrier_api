@@ -6,10 +6,10 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Eval
 
 __all__ = ['Carrier']
-__metaclass__ = PoolMeta
 
 
 class Carrier:
+    __metaclass__ = PoolMeta
     __name__ = 'carrier'
     apis = fields.Many2Many('carrier.api-carrier.carrier',
         'carrier', 'api', 'Carrier API')
