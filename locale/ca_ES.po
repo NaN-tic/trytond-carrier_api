@@ -66,6 +66,10 @@ msgctxt "field:carrier.api,method:"
 msgid "Method"
 msgstr "Métode"
 
+msgctxt "field:carrier.api,name:"
+msgid "Name"
+msgstr "Nom"
+
 msgctxt "field:carrier.api,password:"
 msgid "Password"
 msgstr "Contrasenya"
