@@ -94,5 +94,11 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+
+        <record model="ir.model.button" id="test_connection_button">
+            <field name="name">test_connection</field>
+            <field name="string">Test Connection</field>
+            <field name="model" search="[('model', '=', 'carrier.api')]"/>
+        </record>
     </data>
 </tryton>

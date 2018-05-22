@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- This file is part carrier_api module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
-<form string="Carrier API">
+<form>
     <label name="name"/>
     <field name="name"/>
     <label name="method"/>
@@ -22,7 +22,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <label name="debug"/>
             <field name="debug"/>
             <separator string="Test" colspan="6" id="test"/>
-            <button name="test_connection" string="Test connection" colspan="6"/>
+            <button name="test_connection" colspan="6"/>
         </page>
         <page string="General" id="general">
             <label name="reference"/>

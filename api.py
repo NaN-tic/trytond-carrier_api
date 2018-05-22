@@ -6,7 +6,6 @@ from trytond.model import fields, ModelSQL, ModelView
 from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
 from trytond.pyson import Eval, Id
-from trytond import backend
 from genshi.template import TextTemplate
 
 __all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2',
@@ -69,24 +68,8 @@ class CarrierApi(ModelSQL, ModelView):
             'connection_error': 'Test connection failed!',
         })
         cls._buttons.update({
-                'test_connection': {},
-                })
-
-    @classmethod
-    def __register__(cls, module_name):
-        TableHandler = backend.get('TableHandler')
-        sql_table = cls.__table__()
-        cursor = Transaction().cursor
-        table = TableHandler(cursor, cls, module_name)
-
-        column_name = table.column_exist('name')
-
-        super(CarrierApi, cls).__register__(module_name)
-
-        if not column_name:
-            cursor.execute(*sql_table.update(
-                columns=[sql_table.name],
-                values=[sql_table.method]))
+            'test_connection': {},
+            })
 
     @classmethod
     def get_carrier_app(cls):

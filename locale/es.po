@@ -44,11 +44,11 @@ msgstr "Empresa"
 
 msgctxt "field:carrier.api,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:carrier.api,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:carrier.api,debug:"
 msgid "Debug"
@@ -132,11 +132,11 @@ msgstr "Unidad peso"
 
 msgctxt "field:carrier.api,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:carrier.api,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:carrier.api,zips:"
 msgid "Zip"
@@ -152,11 +152,11 @@ msgstr "Transportista"
 
 msgctxt "field:carrier.api-carrier.carrier,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:carrier.api-carrier.carrier,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:carrier.api-carrier.carrier,id:"
 msgid "ID"
@@ -168,11 +168,11 @@ msgstr "Nombre"
 
 msgctxt "field:carrier.api-carrier.carrier,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:carrier.api-carrier.carrier,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:carrier.api.service,api:"
 msgid "API"
@@ -184,11 +184,11 @@ msgstr "Código"
 
 msgctxt "field:carrier.api.service,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:carrier.api.service,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:carrier.api.service,id:"
 msgid "ID"
@@ -204,11 +204,11 @@ msgstr "Nombre"
 
 msgctxt "field:carrier.api.service,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:carrier.api.service,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:stock.configuration,carrier_api_check_country:"
 msgid "Carrier API Country"
@@ -315,7 +315,7 @@ msgid "Test"
 msgstr "Prueba"
 
 msgctxt "view:carrier.api:"
-msgid "Test connection"
+msgid "Test Connection"
 msgstr "Prueba de conexión"
 
 msgctxt "view:carrier.api:"
