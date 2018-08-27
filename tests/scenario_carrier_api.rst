@@ -14,11 +14,6 @@ Imports::
     >>> today = datetime.date.today()
     >>> yesterday = today - relativedelta(days=1)
 
-Create database::
-
-    >>> config = config.set_trytond()
-    >>> config.pool.test = True
-
 Install carrier_api Module::
 
     >>> config = activate_modules('carrier_api')
@@ -71,10 +66,10 @@ Create product::
     >>> template.default_uom = unit
     >>> template.type = 'goods'
     >>> template.list_price = Decimal('20')
-    >>> template.cost_price = Decimal('8')
+    >>> product, = template.products
+    >>> product.cost_price = Decimal('8')
     >>> template.save()
-    >>> product.template = template
-    >>> product.save()
+    >>> product, = template.products
 
     >>> service = Product()
     >>> template = ProductTemplate()
@@ -83,10 +78,10 @@ Create product::
     >>> template.default_uom = unit
     >>> template.type = 'service'
     >>> template.list_price = Decimal('20')
-    >>> template.cost_price = Decimal('8')
+    >>> service, = template.products
+    >>> service.cost_price = Decimal('8')
     >>> template.save()
-    >>> service.template = template
-    >>> service.save()
+    >>> service, = template.products
 
 Get stock locations::
 
