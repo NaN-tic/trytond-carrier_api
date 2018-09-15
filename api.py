@@ -114,8 +114,7 @@ class CarrierApi(ModelSQL, ModelView):
         template_context = self.template_context(record)
         return template.generate(**template_context).render(encoding='UTF-8')
 
-class CarrierApiService2:
-    __metaclass__ = PoolMeta
+class CarrierApiService2(metaclass=PoolMeta):
     __name__ = 'carrier.api.service'
     api = fields.Many2One('carrier.api', 'API', required=True)
 

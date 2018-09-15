@@ -133,4 +133,4 @@ Create Shipment Out::
     >>> shipment_out.reload()
     >>> shipment_out.click('pack')
     >>> shipment_out.state
-    u'packed'
+    'packed'
