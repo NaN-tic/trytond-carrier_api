@@ -33,6 +33,8 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="vat"/>
             <label name="phone"/>
             <field name="phone"/>
+            <label name="email"/>
+            <field name="email"/>
             <label name="company"/>
             <field name="company"/>
             <label name="warehouse"/>
