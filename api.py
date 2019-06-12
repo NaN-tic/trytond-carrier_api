@@ -33,7 +33,7 @@ class CarrierApi(ModelSQL, ModelView):
     carriers = fields.Many2Many('carrier.api-carrier.carrier',
             'api', 'carrier', 'Carriers', required=True)
     method = fields.Selection('get_carrier_app', 'Method', required=True)
-    required = fields.Function(fields.Boolean('Required', readonly=True),
+    required = fields.Function(fields.Boolean('Required'),
         'on_change_with_required')
     services = fields.One2Many('carrier.api.service', 'api', 'Services')
     default_service = fields.Many2One('carrier.api.service', 'Service',
