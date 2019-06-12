@@ -5,7 +5,7 @@
 from trytond.model import fields, ModelSQL, ModelView
 from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
-from trytond.pyson import Eval, Id
+from trytond.pyson import Bool, Eval, Id
 from trytond import backend
 from genshi.template import TextTemplate
 
@@ -13,6 +13,8 @@ __all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2',
     'CarrierApiCarrier']
 __metaclass__ = PoolMeta
 
+_STATES = {'required': Bool(Eval('required'))}
+_DEPENDS = ['required']
 
 class CarrierApiService(ModelSQL, ModelView):
     'Carrier API Service'
@@ -31,15 +33,17 @@ class CarrierApi(ModelSQL, ModelView):
     carriers = fields.Many2Many('carrier.api-carrier.carrier',
             'api', 'carrier', 'Carriers', required=True)
     method = fields.Selection('get_carrier_app', 'Method', required=True)
+    required = fields.Function(fields.Boolean('Required', readonly=True),
+        'on_change_with_required')
     services = fields.One2Many('carrier.api.service', 'api', 'Services')
     default_service = fields.Many2One('carrier.api.service', 'Service',
         help='Select a default service after save api and add services',
         domain=[('api', '=', Eval('id'))],
         depends=['id'])
-    vat = fields.Char('VAT', required=True)
-    url = fields.Char('URL', required=True)
-    username = fields.Char('Username', required=True)
-    password = fields.Char('Password', required=True)
+    vat = fields.Char('VAT', states=_STATES, depends=_DEPENDS)
+    url = fields.Char('URL', states=_STATES, depends=_DEPENDS)
+    username = fields.Char('Username', states=_STATES, depends=_DEPENDS)
+    password = fields.Char('Password', states=_STATES, depends=_DEPENDS)
     reference = fields.Boolean('Reference', help='Use reference from carrier')
     reference_origin = fields.Boolean('Reference Origin',
         help='Use origin field as the reference record')
@@ -52,6 +56,7 @@ class CarrierApi(ModelSQL, ModelView):
         domain=[('category', '=', Id('product', 'uom_cat_weight'))],
         help='Default API unit')
     phone = fields.Char('Phone')
+    email = fields.Char('Email')
     zips = fields.Text('Zip',
         help='Zip codes not send to carrier, separated by comma')
     debug = fields.Boolean('Debug')
@@ -105,6 +110,10 @@ class CarrierApi(ModelSQL, ModelView):
 
     @staticmethod
     def default_reference():
+        return True
+
+    @fields.depends('method')
+    def on_change_with_required(self, name=None):
         return True
 
     @staticmethod

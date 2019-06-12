@@ -190,6 +190,10 @@ msgctxt "field:carrier.api.service,create_uid:"
 msgid "Create User"
 msgstr "Usuario creación"
 
+msgctxt "field:carrier.api.service,email:"
+msgid "Email"
+msgstr "Email"
+
 msgctxt "field:carrier.api.service,id:"
 msgid "ID"
 msgstr "ID"
@@ -201,6 +205,10 @@ msgstr "Nombre"
 msgctxt "field:carrier.api.service,rec_name:"
 msgid "Name"
 msgstr "Nombre"
+
+msgctxt "field:carrier.api.service,required:"
+msgid "Required"
+msgstr "Requerido"
 
 msgctxt "field:carrier.api.service,write_date:"
 msgid "Write Date"
