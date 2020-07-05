@@ -69,10 +69,6 @@ class CarrierApi(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(CarrierApi, cls).__setup__()
-        cls._error_messages.update({
-            'connection_successfully': 'Test connection are successfully!',
-            'connection_error': 'Test connection failed!',
-        })
         cls._buttons.update({
             'test_connection': {},
             })

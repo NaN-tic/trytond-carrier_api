@@ -2,26 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:carrier.api:"
-msgid "Test connection are successfully!"
-msgstr "¡Prueba de conexión realizada con éxito!"
-
-msgctxt "error:carrier.api:"
-msgid "Test connection failed!"
-msgstr "¡Prueba de conexión fallida!"
-
-msgctxt "error:stock.shipment.out:"
-msgid ""
-"Invalid ZIP number \"%(zip)s\" and country \"%(country)s\" on shipment "
-"\"%(shipment)s\"."
-msgstr ""
-"El código postal \"%(zip)s\" y país \"%(country)s\" no es correcto en el "
-"albarán \"%(shipment)s\"."
-
-msgctxt "error:stock.shipment.out:"
-msgid "Required ZIP number on shipment \"%(shipment)s\"."
-msgstr "Se requiere el código postal en el albarán \"%(shipment)s\"."
-
 msgctxt "field:carrier,apis:"
 msgid "Carrier API"
 msgstr "API transportista"

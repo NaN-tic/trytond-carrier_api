@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data grouped="1">
+        <record model="ir.message" id="msg_connection_successfully">
+            <field name="text">Test connection are successfully!</field>
+        </record>
+        <record model="ir.message" id="msg_connection_error">
+            <field name="text">Test connection failed!</field>
+        </record>
+        <record model="ir.message" id="msg_required_zip">
+            <field name="text">Required ZIP number on shipment "%(shipment)s"</field>
+        </record>
+        <record model="ir.message" id="msg_invalid_zip">
+            <field name="text">Invalid ZIP number "%(zip)s" and country "%(country)s" on shipment "%(shipment)s".</field>
+        </record>
+    </data>
+</tryton>

@@ -57,6 +57,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             id="menu_carrier_api_form" sequence="10"/>
 
         <record model="ir.rule.group" id="rule_group_carrier_api">
+          <field name="name">Carrier API</field>
             <field name="model" search="[('model', '=', 'carrier.api')]"/>
             <field name="global_p" eval="True"/>
         </record>

@@ -62,7 +62,6 @@ Create product::
     >>> product = Product()
     >>> template = ProductTemplate()
     >>> template.name = 'Product'
-    >>> template.category = category
     >>> template.default_uom = unit
     >>> template.type = 'goods'
     >>> template.list_price = Decimal('20')
@@ -74,7 +73,6 @@ Create product::
     >>> service = Product()
     >>> template = ProductTemplate()
     >>> template.name = 'Service'
-    >>> template.category = category
     >>> template.default_uom = unit
     >>> template.type = 'service'
     >>> template.list_price = Decimal('20')
