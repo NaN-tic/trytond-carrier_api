@@ -8,9 +8,6 @@ from trytond.transaction import Transaction
 from trytond.pyson import Bool, Eval, Id
 from genshi.template import TextTemplate
 
-__all__ = ['CarrierApiService', 'CarrierApi', 'CarrierApiService2',
-    'CarrierApiCarrier']
-
 _STATES = {'required': Bool(Eval('required'))}
 _DEPENDS = ['required']
 

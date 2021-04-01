@@ -5,23 +5,21 @@ from trytond.pool import Pool, PoolMeta
 from trytond.i18n import gettext
 from trytond.exceptions import UserError
 
-__all__ = ['ShipmentOut']
-
 
 class ShipmentOut(metaclass=PoolMeta):
     __name__ = 'stock.shipment.out'
 
     def carrier_api_check_country_es(self):
-        # Spain zip is 5 digits and only digits
-        if not self.delivery_address.zip:
-            raise UserError(gettext('smtp.msg_required_zip',
+        # Spain postal code is 5 digits and only digits
+        if not self.delivery_address.postal_code:
+            raise UserError(gettext('smtp.msg_required_postal_code',
                 shipment=self.rec_name))
 
-        zip_ = self.delivery_address.zip
-        if not len(zip_) == 5 or not zip_.isdigit():
-            raise UserError(gettext('smtp.msg_invalid_zip',
+        postal_code = self.delivery_address.postal_code
+        if not len(postal_code) == 5 or not postal_code.isdigit():
+            raise UserError(gettext('smtp.msg_invalid_postal_code',
                 shipment=self.rec_name,
-                zip=zip_,
+                postal_code=postal_code,
                 country=self.delivery_address.country.code))
 
     @classmethod
@@ -41,4 +39,4 @@ class ShipmentOut(metaclass=PoolMeta):
                     check_country = getattr(cls, check_country)
                     check_country(shipment)
 
-        super(ShipmentOut, cls).pack(shipments)
+        super().pack(shipments)

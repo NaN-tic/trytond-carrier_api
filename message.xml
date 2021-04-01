@@ -9,11 +9,11 @@ this repository contains the full copyright notices and license terms. -->
         <record model="ir.message" id="msg_connection_error">
             <field name="text">Test connection failed!</field>
         </record>
-        <record model="ir.message" id="msg_required_zip">
+        <record model="ir.message" id="msg_required_postal_code">
             <field name="text">Required ZIP number on shipment "%(shipment)s"</field>
         </record>
-        <record model="ir.message" id="msg_invalid_zip">
-            <field name="text">Invalid ZIP number "%(zip)s" and country "%(country)s" on shipment "%(shipment)s".</field>
+        <record model="ir.message" id="msg_invalid_postal_code">
+            <field name="text">Invalid ZIP number "%(postal_code)s" and country "%(country)s" on shipment "%(shipment)s".</field>
         </record>
     </data>
 </tryton>

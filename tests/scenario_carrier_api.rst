@@ -37,13 +37,13 @@ Create customer::
     >>> customer = Party(name='Customer')
     >>> customer.save()
     >>> address, = customer.addresses
-    >>> address.zip = '08720'
+    >>> address.postal_code = '08720'
     >>> address.country = spain
     >>> address.save()
     >>> customer2 = Party(name='Customer2')
     >>> customer2.save()
     >>> address2, = customer2.addresses
-    >>> address2.zip = '08720'
+    >>> address2.postal_code = '08720'
     >>> address2.country = spain
     >>> address2.save()
 
