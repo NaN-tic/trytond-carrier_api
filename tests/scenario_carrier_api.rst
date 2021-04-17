@@ -129,6 +129,7 @@ Create Shipment Out::
     >>> shipment_out.click('assign_try')
     True
     >>> shipment_out.reload()
+    >>> shipment_out.click('pick')
     >>> shipment_out.click('pack')
     >>> shipment_out.state
     'packed'
