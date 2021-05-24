@@ -69,7 +69,7 @@ class CarrierApi(ModelSQL, ModelView):
         (None, ''),
         ('png', 'PNG'),
         ('pdf', 'PDF'),
-        ], 'Print Report', required=True)
+        ], 'Print Report')
 
     @classmethod
     def __setup__(cls):
