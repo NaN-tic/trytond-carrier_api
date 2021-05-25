@@ -69,6 +69,10 @@ class CarrierApi(ModelSQL, ModelView):
         (None, ''),
         ('png', 'PNG'),
         ('pdf', 'PDF'),
+        ('zpl', 'Zebra'),
+        ('tec', 'TEC'),
+        ('ps', 'PS'),
+        ('txt', 'TXT'),
         ], 'Print Report')
 
     @classmethod
