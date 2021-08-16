@@ -62,6 +62,15 @@ class CarrierApi(ModelSQL, ModelView):
         help='Python expression that will be evaluated to generate the '
             'tracking uri:\n'
             '- ${record}: the record object')
+    print_report = fields.Selection([
+        (None, ''),
+        ('png', 'PNG'),
+        ('pdf', 'PDF'),
+        ('zpl', 'Zebra'),
+        ('tec', 'TEC'),
+        ('ps', 'PS'),
+        ('txt', 'TXT'),
+        ], 'Print Report')
 
     @classmethod
     def __setup__(cls):
@@ -87,6 +96,10 @@ class CarrierApi(ModelSQL, ModelView):
     @staticmethod
     def default_reference():
         return True
+
+    @staticmethod
+    def default_print_report():
+        return None
 
     @fields.depends('method')
     def on_change_with_required(self, name=None):
