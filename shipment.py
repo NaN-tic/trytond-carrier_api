@@ -14,12 +14,12 @@ class ShipmentOut(metaclass=PoolMeta):
     def carrier_api_check_country_es(self):
         # Spain zip is 5 digits and only digits
         if not self.delivery_address.zip:
-            raise UserError(gettext('smtp.msg_required_zip',
+            raise UserError(gettext('carrier_api.msg_required_zip',
                 shipment=self.rec_name))
 
         zip_ = self.delivery_address.zip
         if not len(zip_) == 5 or not zip_.isdigit():
-            raise UserError(gettext('smtp.msg_invalid_zip',
+            raise UserError(gettext('carrier_api.msg_invalid_zip',
                 shipment=self.rec_name,
                 zip=zip_,
                 country=self.delivery_address.country.code))
