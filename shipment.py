@@ -12,12 +12,12 @@ class ShipmentOut(metaclass=PoolMeta):
     def carrier_api_check_country_es(self):
         # Spain postal code is 5 digits and only digits
         if not self.delivery_address.postal_code:
-            raise UserError(gettext('smtp.msg_required_postal_code',
+            raise UserError(gettext('carrier_api.msg_required_postal_code',
                 shipment=self.rec_name))
 
         postal_code = self.delivery_address.postal_code
         if not len(postal_code) == 5 or not postal_code.isdigit():
-            raise UserError(gettext('smtp.msg_invalid_postal_code',
+            raise UserError(gettext('carrier_api.msg_invalid_postal_code',
                 shipment=self.rec_name,
                 postal_code=postal_code,
                 country=self.delivery_address.country.code))
