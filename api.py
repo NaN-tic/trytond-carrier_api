@@ -140,6 +140,6 @@ class CarrierApiCarrier(ModelSQL):
     __name__ = 'carrier.api-carrier.carrier'
     _table = 'carrier_api_carrier_rel'
     api = fields.Many2One('carrier.api', 'API', ondelete='CASCADE',
-        select=True, required=True)
-    carrier = fields.Many2One('carrier', 'Carrier',
-            ondelete='RESTRICT', select=True, required=True)
+        required=True)
+    carrier = fields.Many2One('carrier', 'Carrier', ondelete='RESTRICT',
+        required=True)
