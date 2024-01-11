@@ -13,8 +13,7 @@ class Carrier(metaclass=PoolMeta):
     services = fields.Function(fields.Many2Many('carrier.api.service', None,
         None, 'Services'), 'on_change_with_services')
     service = fields.Many2One('carrier.api.service', 'Service',
-        domain=[('id', 'in', Eval('services'))],
-        depends=['services'])
+        domain=[('id', 'in', Eval('services'))])
 
     @fields.depends('apis')
     def on_change_with_services(self, name=None):

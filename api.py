@@ -34,12 +34,11 @@ class CarrierApi(ModelSQL, ModelView):
     services = fields.One2Many('carrier.api.service', 'api', 'Services')
     default_service = fields.Many2One('carrier.api.service', 'Service',
         help='Select a default service after save api and add services',
-        domain=[('api', '=', Eval('id'))],
-        depends=['id'])
-    vat = fields.Char('VAT', states=_STATES, depends=_DEPENDS)
-    url = fields.Char('URL', states=_STATES, depends=_DEPENDS)
-    username = fields.Char('Username', states=_STATES, depends=_DEPENDS)
-    password = fields.Char('Password', states=_STATES, depends=_DEPENDS)
+        domain=[('api', '=', Eval('id'))])
+    vat = fields.Char('VAT', states=_STATES)
+    url = fields.Char('URL', states=_STATES)
+    username = fields.Char('Username', states=_STATES)
+    password = fields.Char('Password', states=_STATES)
     reference = fields.Boolean('Reference', help='Use reference from carrier')
     reference_origin = fields.Boolean('Reference Origin',
         help='Use origin field as the reference record')
