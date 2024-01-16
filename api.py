@@ -6,7 +6,6 @@ from trytond.model import fields, ModelSQL, ModelView
 from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
 from trytond.pyson import Bool, Eval, Id
-from genshi.template import TextTemplate
 
 _STATES = {'required': Bool(Eval('required'))}
 _DEPENDS = ['required']
@@ -58,10 +57,6 @@ class CarrierApi(ModelSQL, ModelView):
     debug = fields.Boolean('Debug')
     timeout = fields.Integer('Timeout',
         help='Total of seconds the connection will be lost')
-    url_tracking_ref = fields.Char('URL Tracking Reference',
-        help='Python expression that will be evaluated to generate the '
-            'tracking uri:\n'
-            '- ${record}: the record object')
     print_report = fields.Selection([
         (None, ''),
         ('png', 'PNG'),
@@ -117,18 +112,6 @@ class CarrierApi(ModelSQL, ModelView):
         for api in apis:
             getattr(cls, 'test_%s' % api.method)(api)
 
-    @staticmethod
-    def template_context(record):
-        'Generate the template context'
-        return {'record': record}
-
-    def render_url_tracking_ref(self, record):
-        'Render Genshi uri tracking ref'
-        if not self.url_tracking_ref:
-            return
-        template = TextTemplate(self.url_tracking_ref)
-        template_context = self.template_context(record)
-        return template.generate(**template_context).render(encoding='UTF-8')
 
 class CarrierApiService2(metaclass=PoolMeta):
     __name__ = 'carrier.api.service'
