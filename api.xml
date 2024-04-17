@@ -24,14 +24,14 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
 
         <record model="ir.model.access" id="access_carrier_api">
-            <field name="model" search="[('model', '=', 'carrier.api')]"/>
+            <field name="model">carrier.api</field>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_carrier_api_group_admin">
-            <field name="model" search="[('model', '=', 'carrier.api')]"/>
+            <field name="model">carrier.api</field>
             <field name="group" ref="group_carrier_api_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -58,7 +58,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
 
         <record model="ir.rule.group" id="rule_group_carrier_api">
           <field name="name">Carrier API</field>
-            <field name="model" search="[('model', '=', 'carrier.api')]"/>
+            <field name="model">carrier.api</field>
             <field name="global_p" eval="True"/>
         </record>
         <record model="ir.rule" id="rule_carrier_api1">
@@ -81,14 +81,14 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
 
         <record model="ir.model.access" id="access_carrier_api_service">
-            <field name="model" search="[('model', '=', 'carrier.api.service')]"/>
+            <field name="model">carrier.api.service</field>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_carrier_api_service_group_admin">
-            <field name="model" search="[('model', '=', 'carrier.api.service')]"/>
+            <field name="model">carrier.api.service</field>
             <field name="group" ref="group_carrier_api_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -99,7 +99,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="ir.model.button" id="test_connection_button">
             <field name="name">test_connection</field>
             <field name="string">Test Connection</field>
-            <field name="model" search="[('model', '=', 'carrier.api')]"/>
+            <field name="model">carrier.api</field>
         </record>
     </data>
 </tryton>
